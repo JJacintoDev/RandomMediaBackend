@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RandomMediaBackend.Models;
 
 namespace RandomMediaBackend.Migrations
 {
     [DbContext(typeof(RandomMediaDBContext))]
-    partial class RandomMediaDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210626223126_tirarNulls")]
+    partial class tirarNulls
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
