@@ -14,25 +14,25 @@ namespace RandomMediaBackend.Models
         [Key]
         public int PostID { get; set; }
 
-        [Required]
+        //[Required]
         public string PostCategory { get; set; }
 
-        [Required]
+        //[Required]
         public string PostTitle { get; set; }
 
         public string PostContent { get; set; }
 
         public string PostImage { get; set; }
-        [Required]
+        //[Required]
         public string PostLikeness { get; set; }
-        [Required]
+        //[Required]
         public int PostType { get; set; }
-        [Required]
+        //[Required]
         public int PostViews { get; set; }
-        [Required]
+        //[Required]
         public bool PinnedPost { get; set; }
 
-        [Required]
+        //[Required]
         public DateTime PostDate { get; set; }
 
 

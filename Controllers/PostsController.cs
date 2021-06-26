@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -81,13 +82,19 @@ namespace RandomMediaBackend.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Posts>> PostPosts(Posts posts)
+        public async Task<ActionResult<Posts>> PostPosts([FromForm] Posts post)
+        // public void PostPosts([FromBody]string value)
+        //{
+        //    Console.WriteLine(value);
+        //}
         {
-            _context.Posts.Add(posts);
+            _context.Posts.Add(post);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPosts", new { id = posts.PostID }, posts);
+            return CreatedAtAction("GetPosts", new { id = post.PostID }, post);
         }
+
+
 
         // DELETE: api/Posts/5
         [HttpDelete("{id}")]

@@ -53,7 +53,7 @@ namespace RandomMediaBackend
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection(); //talvez o ssl?
 
             app.UseRouting();
 
